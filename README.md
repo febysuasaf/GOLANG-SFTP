@@ -12,7 +12,7 @@ go get -u github.com/pkg/sftp
 ```
 Setelah framework gin dan middleware sftp sudah di tambahkan buatlah file :
 > main.go
-```
+```go
 package main
 
 import (
@@ -50,7 +50,7 @@ func SendFiles(c *gin.Context) {
 ```
 Buat File Baru dan tambahkan baris code function berikut :
 > sftp.go
-```
+```go
 type SftpClient struct {
 	Host     string `json:"host" form:"host"`
 	User     string `json:"user" form:"user"`
@@ -152,7 +152,7 @@ func (sc *SftpClient) Put(c *gin.Context, remoteFile string, pathDir string) (er
 
 ## Buat File Baru dan tambahkan baris code function berikut :
 > sftp_connection.go
-```
+```go
 package main
 
 import (
