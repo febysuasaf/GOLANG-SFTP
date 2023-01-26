@@ -1,5 +1,4 @@
 # GOLANG-SFTP
-Golang Sftp Client
 Membuat Project Golang Sftp Client Menggunakan Framework Gin + Sftp
 
 Buat Project Baru Jalankan perintah Berikut:
