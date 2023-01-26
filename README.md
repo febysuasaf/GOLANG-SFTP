@@ -246,9 +246,9 @@ func ConnectionSftp(c *gin.Context) bool {
 
 **Func Connect** adalah part of func untuk memastikan server yang dituju bisa dilakukan SSH dengan benar dan terkoneksi dengan baik.
 
-## TESTING TEST CONNECTION WITH POSTMAN
+### TESTING TEST CONNECTION WITH POSTMAN
 ![alt text](https://github.com/febysuasaf/GOLANG-SFTP/blob/main/postman_test_connection.png)
 
-## TESTING SEND FILE SFTP WITH POSTMAN 
+### TESTING SEND FILE SFTP WITH POSTMAN 
 ![alt text](https://github.com/febysuasaf/GOLANG-SFTP/blob/main/postman_send_sftp.png)
 
