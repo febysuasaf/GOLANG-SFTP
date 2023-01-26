@@ -51,6 +51,22 @@ func SendFiles(c *gin.Context) {
 Buat File Baru dan tambahkan baris code function berikut :
 > sftp.go
 ```go
+package main
+
+import (
+	"errors"
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"github.com/pkg/sftp"
+	"io"
+	"log"
+	"mime/multipart"
+	"net/http"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
 type SftpClient struct {
 	Host     string `json:"host" form:"host"`
 	User     string `json:"user" form:"user"`
