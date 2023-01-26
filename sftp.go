@@ -22,28 +22,6 @@ type SftpClient struct {
 	*sftp.Client
 }
 
-func NewConn(host string, user string, password string, port int) (client *SftpClient, err error) {
-	switch {
-	case `` == strings.TrimSpace(host),
-		`` == strings.TrimSpace(user),
-		`` == strings.TrimSpace(password),
-		0 >= port || port > 65535:
-		return nil, errors.New("Invalid parameters")
-	}
-
-	client = &SftpClient{
-		Host:     host,
-		User:     user,
-		Password: password,
-		Port:     port,
-	}
-
-	if err = client.Connect(); nil != err {
-		return nil, err
-	}
-	return client, nil
-}
-
 func SendToSftp(c *gin.Context, hostname string, username string, password string, port int, path string, file *multipart.FileHeader) {
 	sftp := new(SftpClient)
 	if err := c.Bind(sftp); err != nil {
@@ -73,6 +51,28 @@ func SendToSftp(c *gin.Context, hostname string, username string, password strin
 	}
 	ftpClient.Put(c, file.Filename, path)
 
+}
+
+func NewConn(host string, user string, password string, port int) (client *SftpClient, err error) {
+	switch {
+	case `` == strings.TrimSpace(host),
+		`` == strings.TrimSpace(user),
+		`` == strings.TrimSpace(password),
+		0 >= port || port > 65535:
+		return nil, errors.New("Invalid parameters")
+	}
+
+	client = &SftpClient{
+		Host:     host,
+		User:     user,
+		Password: password,
+		Port:     port,
+	}
+
+	if err = client.Connect(); nil != err {
+		return nil, err
+	}
+	return client, nil
 }
 
 // Upload file to sftp server
