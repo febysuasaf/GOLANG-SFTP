@@ -150,7 +150,7 @@ func (sc *SftpClient) Put(c *gin.Context, remoteFile string, pathDir string) (er
 
 **Func Put** adalah sebuah function untuk mengatur pengiriman file dan jenis file yang akan dikirim kan ke server yang sudah terhubung.
 
-Buat File Baru dan tambahkan baris code function berikut :
+## Buat File Baru dan tambahkan baris code function berikut :
 > sftp_connection.go
 ```
 package main
@@ -227,4 +227,5 @@ func ConnectionSftp(c *gin.Context) bool {
 ```
 ## Penjelasan Function file sftp_connection.go :
 **Func TestingConnection** adalah sebuah function untuk testing connection agar memastikan server yang di tuju sudah berhasil terkoneksi atau belum.
+
 **Func Connect** adalah part of func untuk memastikan server yang dituju bisa dilakukan SSH dengan benar dan terkoneksi dengan baik.
